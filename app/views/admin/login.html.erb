@@ -1,0 +1,18 @@
+<h2>Login</h2>
+<%= form_tag("/authorize", method: "post") do %>
+	<div class="row">
+		<div class="col-lg-6">
+			<label>Username</label>
+			<input type="text" name="username" />
+		</div>
+		<div class="col-lg-6">
+			<label>Password</label>
+			<input type="password" name="password" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<input type="submit" value="Login" />
+		</div>
+	</div>
+<% end %>

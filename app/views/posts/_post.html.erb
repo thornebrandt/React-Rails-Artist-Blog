@@ -1,0 +1,27 @@
+<article class="project">
+	<%= render "posts/post_breadcrumbs", breadcrumbs: @breadcrumbs %>
+	<% if @post.icon %>
+		<%= image_tag @post.icon, class: "chapterHeading" %>
+	<% end %>
+	<h2 class='title'><%= @post.title %></h2>
+	<h4 class='subtitle'><%= @post.subtitle %></h4>
+	<% if @post.post_type == 'blog' %>
+		<h4 class="publishDate"><%= @post.formatted_publish_date %></h4>
+	<% end %>
+	<% if @post.tags %>
+		<%= render "tags/tags", tags: @post.tags %>
+	<% end %>
+	<div class="postBody">
+		<%= @post.body.html_safe %>
+	</div>
+	<% if logged_in %>
+		<%= link_to 'Edit', edit_post_path(@post) %> <br />
+		<% if !@post.published %>
+			<strong>(NOT PUBLISHED)</strong> <br/>
+			<%= link_to 'Publish', '/admin/publish_post/' + @post.id.to_s %>
+		<% else %>
+			<%= link_to 'UnPublish', '/admin/unpublish_post/' + @post.id.to_s %>
+		<% end %><br />
+		<%= link_to 'Dashboard', '/admin/dashboard' %>
+	<% end %>
+</article>

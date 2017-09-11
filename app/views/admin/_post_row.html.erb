@@ -1,0 +1,34 @@
+<div class="row <%= cycle('even', 'odd') %>">
+	<div class="col-xs-1">
+		<%= post.short_date %>
+	</div>
+	<div class="col-xs-3">
+		<%= post.post_type %>
+		<% if post.post_type == 'portfolio' %>
+			/ <%= post.portfolio.name %>
+		<% end %>
+	</div>
+	<div class="col-xs-4">
+		<%= post.title %> :
+	</div>
+	<div class="col-xs-2">
+		<%= post.url %>
+	</div>
+	<% unless post.published? %>
+		<div class="col-xs-2">
+			<%= link_to "View", post %>
+			/
+			<%= link_to "Edit", edit_post_path(post) %>
+			/
+			<%= link_to "Publish", post.publish_path %>
+		</div>
+	<% else %>
+		<div class="col-xs-2">
+			<%= link_to "View", post %>
+			/
+			<%= link_to "Edit", edit_post_path(post) %>
+			/
+			<%= link_to "UnPublish", post.unpublish_path %>
+		</div>
+	<% end %>
+</div>

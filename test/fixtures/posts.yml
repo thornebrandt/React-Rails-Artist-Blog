@@ -1,0 +1,130 @@
+one:
+  title: "FirstPost"
+  subtitle: First Subtitle
+  url: one
+  body: <p>Body with HTML</p>
+  summary: <p>Summary with HTML</p>
+  icon: /images/headings/vr.png
+  post_type: blog
+  published: false
+  publish_date: 2017-05-05 14:23:41
+
+two:
+  title: SecondPost
+  subtitle: MyText
+  body: MyText
+  url: two
+  summary: MyText
+  icon: MyIcon_Two
+  post_type: blog
+  portfolio_id: 1
+  published: false
+  publish_date: 2017-05-06 14:23:41
+
+with_tags:
+  title: TagMapPost
+  subtitle: Text
+  body: Text
+  url: three
+  summary: Text
+  post_type: blog
+  published: false
+  tags: [vr, dev]
+  publish_date: 2017-05-07 14:23:31
+
+with_portfolio:
+  title: DevPortfolioPost
+  subtitle: MyText
+  body: MyText
+  url: dev_portfolio_post
+  summary: MyText
+  icon: MyIcon_With_Portfolio
+  post_type: portfolio
+  tags: [dev]
+  portfolio: three
+  published: true
+  publish_date: 2017-05-08 14:23:41
+
+dev_blog:
+  title: Dev Blog Test
+  subtitle: Dev Blog Subtitle
+  body: <p>Body with HTML</p>
+  url: dev_blog
+  summary: <p>Summary with HTML</p>
+  icon: /images/headings/dev.png
+  post_type: blog
+  tags: [dev]
+  published: true
+  publish_date: 2017-05-09 14:23:41
+
+dev_feature:
+  title: Featured Post
+  subtitle: MyText
+  body: MyText
+  url: featured_post
+  summary: MyText
+  icon: MyIcon2
+  post_type: featured
+  tags: [dev]
+  published: true
+  publish_date: 2017-05-10 14:23:41
+
+another_blog:
+  title: Paginated_Blog_Test
+  subtitle: Dev Blog Subtitle
+  body: <p>Body with HTML</p>
+  url: paginated_blog
+  summary: <p>Summary with HTML</p>
+  icon: /images/headings/dev.png
+  post_type: blog
+  tags: [dev]
+  published: true
+  publish_date: 2016-09-09 14:23:41
+
+another_blog2:
+  title: Paginated_Blog_Test
+  subtitle: Dev Blog Subtitle
+  body: <p>Body with HTML</p>
+  url: paginated_blog2
+  summary: <p>Summary with HTML</p>
+  icon: /images/headings/dev.png
+  post_type: blog
+  tags: [dev]
+  published: true
+  publish_date: 2016-09-09 14:23:41
+
+another_blog3:
+  title: Paginated_Blog_Test
+  subtitle: Dev Blog Subtitle
+  body: <p>Body with HTML</p>
+  url: paginated_blog3
+  summary: <p>Summary with HTML</p>
+  icon: /images/headings/dev.png
+  post_type: blog
+  tags: [dev]
+  published: true
+  publish_date: 2016-09-09 14:23:41
+
+another_blog4:
+  title: Paginated_Blog_Test
+  subtitle: Dev Blog Subtitle
+  body: <p>Body with HTML</p>
+  url: paginated_blog4
+  summary: <p>Summary with HTML</p>
+  icon: /images/headings/dev.png
+  post_type: blog
+  tags: [dev]
+  published: true
+  publish_date: 2016-09-09 14:23:41
+
+another_blog5:
+  title: Paginated_Blog_Test
+  subtitle: Dev Blog Subtitle
+  body: <p>Body with HTML</p>
+  url: paginated_blog5
+  summary: <p>Summary with HTML</p>
+  icon: /images/headings/dev.png
+  post_type: blog
+  tags: [dev]
+  published: true
+  publish_date: 2016-09-09 14:23:41

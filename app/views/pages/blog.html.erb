@@ -1,0 +1,14 @@
+<article class='pagination_container'>
+	<h2>Blog</h2>
+	<%= will_paginate @blog_posts, renderer: WillPaginateHelper::BlogLinkRenderer, class: 'pagination top' %>
+</article>
+<% @blog_posts.each do |post| %>
+	<% @post = post %>
+	<%= render("posts/post_summary") %>
+<% end %>
+
+<% if will_paginate @blog_posts %>
+	<article class='pagination_container bottom'>
+		<%= will_paginate @blog_posts, renderer: WillPaginateHelper::BlogLinkRenderer, class: 'pagination bottom' %>
+	</article>
+<% end %>

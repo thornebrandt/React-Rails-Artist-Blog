@@ -1,0 +1,32 @@
+{
+  "name": "reactrailsblog",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "6.9.0",
+    "npm": "4.1.1"
+  },
+  "scripts": {
+    "postinstall": "cd client && yarn install",
+    "start": "foreman start -f Procfile.dev",
+    "rails-server": "echo 'visit http://localhost:3001/hello_world' && foreman start -f Procfile.dev",
+    "test": "jest --watch --bail",
+    "lint": "eslint ./client/app/bundles/Posts --ext .jsx --ext .js; exit 0"
+  },
+  "devDependencies": {
+    "enzyme": "^2.8.2",
+    "enzyme-redux": "^0.1.6",
+    "enzyme-to-json": "^1.5.1",
+    "eslint": "^4.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "install": "^0.10.1",
+    "jest": "^20.0.4",
+    "jest-cli": "^20.0.4",
+    "mockdate": "^2.0.1",
+    "npm": "^4.6.1",
+    "react": "^15.6.0",
+    "react-dom": "^15.6.0",
+    "react-test-renderer": "^15.5.4",
+    "redux-test-utils": "^0.1.2"
+  }
+}

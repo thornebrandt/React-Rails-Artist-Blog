@@ -1,0 +1,6 @@
+<% @featured_posts.each do |post| %>
+	<% if post.published || logged_in %>
+		<% @post = post %>
+		<%= render "posts/feature_summary" %>
+	<% end %>
+<% end %>

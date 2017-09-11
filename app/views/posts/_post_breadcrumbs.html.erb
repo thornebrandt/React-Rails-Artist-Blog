@@ -1,0 +1,15 @@
+<p class='post_breadcrumbs centered'>
+	<% if breadcrumbs %>
+		<% breadcrumbs.each_with_index do |breadcrumb, i| %>
+			<% unless i == 0 %>
+				&gt;
+			<% end %>
+			<% if i == breadcrumbs.length - 1 %>
+				<%= breadcrumb[:name] %>
+			<% else %>
+				<%= link_to breadcrumb[:name], breadcrumb[:link] %>
+			<% end %>
+		<% end %>
+	<% end %>
+</p>
+

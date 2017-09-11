@@ -1,0 +1,27 @@
+<article class='pagination_container'>
+	<% if @tag.icon && @tag.icon != '' %>
+		<%= image_tag @tag.icon, class: "chapterHeading" %>
+	<% end %>
+	<h2>Tagged <%= @tag.display_name %></h2>
+	<%= will_paginate @posts, renderer: WillPaginateHelper::TagLinkRenderer, class: 'pagination top', tag: @tag.name %>
+</article>
+
+<% @posts.each do |post| %>
+	<% @post = post %>
+	<%= render("posts/post_summary") %>
+<% end %>
+<% if @post %>
+	<% @post.post_type = nil %>
+<% end %>
+
+<article class='pagination_container'>
+	<% if @tag.icon && @tag.icon != '' %>
+		<%= image_tag @tag.icon, class: "chapterHeading" %>
+	<% end %>
+	<h2>Tagged <%= @tag.display_name %></h2>
+	<%= will_paginate @posts, renderer: WillPaginateHelper::TagLinkRenderer, class: 'pagination top', tag: @tag.name %>
+</article>
+
+
+
+

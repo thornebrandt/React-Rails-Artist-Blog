@@ -1,0 +1,22 @@
+<article class="portfolio">
+	<% if @portfolio.icon %>
+		<%= image_tag @portfolio.icon, class: "chapterHeading" %>
+	<% end %>
+	<a class="h2_link" href="/portfolio/<%= @portfolio.url %>">
+		<h2 class='title'><%= @portfolio.name %></h2>
+	</a>
+	<div class='portfolioBody'>
+		<%= @portfolio.body.html_safe %>
+	</div>
+	<% if logged_in %>
+		<p>
+			<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> <br />
+			( Published means appearing on main page. Direct links still accessible.) <br />
+			<% if !@portfolio.published %>
+				<strong>(NOT PUBLISHED)</strong>
+			<% end %>
+			<br />
+			<%= link_to 'Dashboard', '/admin/dashboard' %>
+		</p>
+	<% end %>
+</article>

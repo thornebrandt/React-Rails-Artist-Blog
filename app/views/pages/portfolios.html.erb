@@ -1,0 +1,6 @@
+<% @portfolios.each do |portfolio| %>
+	<% if portfolio.published || logged_in %>
+		<% @portfolio = portfolio %>
+		<%= render "portfolios/portfolio" %>
+	<% end %>
+<% end %>

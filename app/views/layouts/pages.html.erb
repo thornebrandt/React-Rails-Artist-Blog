@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title(yield(:title))%></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/head/favicons' %>
+    <%= render 'layouts/head/shim' %>
+    <%= render 'layouts/head/google_analytics' %>
+    <%= render 'layouts/head/highlight' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Redux on Rails Artist Blog">
+    <meta name="author" content="Thorne Brandt">
+  </head>
+  <body class="thornebrandt">
+    <h1 id="home_container"><a id="home" href="/">Your Name</a></h1>
+    <div id="frame">
+      <%= render 'layouts/layout' %>
+      <%= render 'layouts/nav' %>
+      <% if defined?(@portfolio_post) %>
+        <%= render 'layouts/breadcrumbs' %>
+      <% end %>
+      <div id="content" class="container">
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+      </div>
+    </div>
+  </body>
+</html>

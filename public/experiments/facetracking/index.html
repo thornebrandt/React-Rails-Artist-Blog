@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Face mask</title>
+		<meta charset="utf-8">
+		<style>
+			body {
+				font-family: 'Helvetica';
+				background-color: #f0f0f0;
+				margin: 0px auto;
+				text-align: center;
+			}
+
+
+			#overlay, #webgl, #webgl2{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				-o-transform : scaleX(-1);
+				-webkit-transform : scaleX(-1);
+				transform : scaleX(-1);
+				-ms-filter : fliph; /*IE*/
+				filter : fliph; /*IE*/
+
+			}
+
+			#videoel, .flipped{
+				-o-transform : scaleX(-1);
+				-webkit-transform : scaleX(-1);
+				transform : scaleX(-1);
+				-ms-filter : fliph; /*IE*/
+				filter : fliph; /*IE*/
+			}
+
+			#linkback{
+				position: fixed;
+				top: 10px;
+				left: 10px;
+			}
+
+			#container {
+				position : relative;
+				width : 1080px;
+				display: block;
+				margin : 0px auto;
+			}
+
+			#sketch {
+				display: none;
+			}
+
+			#filter {
+				display: none;
+			}
+
+			h2 {
+				font-weight : 400;
+			}
+
+			.masks {
+				display: none;
+			}
+
+			.nogum {
+						display : none;
+			}
+
+			.btn {
+						font-family: 'Lato';
+						font-size: 16px;
+			}
+
+			.hide {
+				display : none;
+			}
+
+			.nohide {
+				display : block;
+			}
+
+		</style>
+	</head>
+	<body>
+		<script src="./ext_js/utils.js"></script>
+		<script src="./ext_js/jsfeat-min.js"></script>
+		<script src="./ext_js/frontalface.js"></script>
+		<script src="./ext_js/jsfeat_detect.js"></script>
+		<script src="./ext_js/numeric-1.2.6.min.js"></script>
+		<script src="./ext_js/mosse.js"></script>
+		<script src="./ext_js/left_eye_filter.js"></script>
+		<script src="./ext_js/right_eye_filter.js"></script>
+		<script src="./ext_js/nose_filter.js"></script>
+		<script src="./models/model_pca_20_svm.js"></script>
+		<script src="./js/clm.js"></script>
+		<script src="./js/svmfilter_webgl.js"></script>
+		<script src="./js/svmfilter_fft.js"></script>
+		<script src="./js/mossefilter.js"></script>
+		<script src="./ext_js/Stats.js"></script>
+		<script src="./js/face_deformer.js"></script>
+		<script src="./js/poisson.js"></script>
+		<div id="content">
+			<a href="http://thornebrandt.com" id="linkback" >thornebrandt.com</a>
+			<h2 id="directions">Give it a moment. Searching for a face...</h2>
+			<h3>Works best in Chrome, with good lighting, and with your camera enabled.</h3>
+			<div id="container">
+				<!--<video id="videoel" width="500" height="375" preload="auto">-->
+				<video id="videoel" width="400" height="300" preload="auto">
+					<!--<source src="./media/Capture_1_092.ogv" type="video/ogg"/>-->
+				</video>
+				<canvas id="overlay"></canvas>
+				<canvas id="webgl"></canvas>
+				<canvas id="webgl2"></canvas>
+			</div>
+			<br/>
+			<img id="clown" class="masks" src="./media/clown.png"></img>
+			<script src="./js/trigger_face.js">
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,148 @@
+<%= redux_store("PostStore", props: @post_props) %>
+<% post_types = [['blog', nil], ['featured', 'featured'], ['portfolio', 'portfolio']] %>
+<%= form_for @post, html: {id: "create_post_form"} do |f| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </div>
+  <% end %>
+
+  <h3> Your environemtn: <%= ENV["RAILS_ENV"] %> </h3>
+  <h3> Prerender: <%= prerender(false) %>
+
+
+  <div class="row">
+    <div class="col-lg-2">
+      <%= f.label "Type" %>
+    </div>
+    <div class="col-lg-9">
+      <%= f.select :post_type, post_types %>
+    </div>
+  </div>
+
+  <div class="row" id="portfolios">
+    <div class="col-lg-2">
+      <%= f.label :portfolio_id %>
+    </div>
+    <div class="col-lg-9">
+      <%= f.select :portfolio_id, @portfolios %>
+    </div>  
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2">
+      <%= f.label :title %>
+    </div>
+    <div class="col-lg-9">
+      <%= f.text_field :title %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2">
+      <%= f.label :subtitle %>
+    </div>
+    <div class="col-lg-9">
+      <%= f.text_field :subtitle %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2">
+      <%= f.label :icon %>
+    </div>
+    <div class="col-lg-9">
+      <%= f.text_field :icon %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2">
+      <%= f.label :summary %>
+    </div>
+    <div class="col-lg-9">
+      <%= f.text_area :summary, class: "large-textarea" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2">
+      <%= f.label :body %>
+    </div>
+    <div class="col-lg-9">
+      <%= react_component("PostForm",
+        props: @post_props, 
+        prerender: prerender(false)
+        )
+      %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2">
+      <%= f.label :url %>
+    </div>
+    <div class="col-lg-9">
+      <%= f.text_field :url %>
+    </div>
+  </div>
+
+  <div class="row" id="datepicker-container">
+    <div class="col-lg-2">
+      <%= f.label "Date or Order" %>
+    </div>
+    <div class="col-lg-9 datepicker">
+      <%= f.datetime_select :publish_date, class: 'datepicker' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div id="postPreview">
+        <h2 class="cloud">Post Preview</h2>
+        <article class="project">
+          <%= image_tag "headings/skull2.png", class: "chapterHeading" %>
+          <h2>Facetracking Glitches 2</h2>
+          <h4>February 21st, 2016</h4>
+          <div class="tags">
+            <a href="#">Development</a>
+            <a href="#">Javascript</a>
+            <a href="#">Facetracking</a>
+            <a href="#">Glitch</a>
+            <a href="#">WebGL</a>
+            <a href="#">Canvas</a>
+          </div>
+          <p>
+            I'm trying to create a faceswap feature.
+          </p>
+          <p>In trying to debug the facetracking problem from <a href="#">earlier</a>, I am now capturing the image data for the mask on every frame. Because of the difference in scale, it creates almost a liquid effect which I thoroughly enjoy.
+          </p>
+          <p>TODO - create a tool that exagerrates this.
+          <%= video_tag(
+              [
+                "facetracking_glitch2.webm",
+                "facetracking_glitch2.ogv",
+                "facetracking_glitch2.mp4"
+              ],
+              controls: true,
+              poster: "posters/facetracking_glitch2.png"
+            ) %>
+        </article>
+      </div>
+    </div>
+  </div>
+
+<%= redux_store_hydration_data %>
+
+

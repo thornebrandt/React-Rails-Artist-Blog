@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title(yield(:title))%></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+  </head>
+  <body>
+    <div id="admin">
+      <% if flash[:error]  %>
+        <header class='error'><%= flash[:error] %></header>
+      <% end %>
+      <div class="container-fluid">
+        <header>Admin for your artist blog</header>
+        <p>This is a single user application. You can use your own authentication process or manually run a BCrypt::Password.create(YOUR_PASSWORD) and store the hash in a place where the app can find it. <br /> ( See config/env.yml.sample for an example )</p>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

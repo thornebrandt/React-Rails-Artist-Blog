@@ -1,0 +1,73 @@
+<%= form_for(portfolio) do |f| %>
+  <% if portfolio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-lg-1">
+      <%= f.label :name %>
+    </div>
+    <div class="col-lg-6">
+      <%= f.text_area :name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-1">
+      <%= f.label :icon %>
+    </div>
+    <div class="col-lg-6">
+      <%= f.text_area :icon %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-1">
+      <%= f.label :body %>
+    </div>
+    <div class="col-lg-6">
+      <%= f.text_area :body, class: "large-textarea" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-1">
+      <%= f.label :url %>
+    </div>
+    <div class="col-lg-6">
+      <%= f.text_area :url %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-1">
+      <%= f.label :published %>
+    </div>
+    <div class="col-lg-6">
+      <%= f.check_box :published %>
+    </div>
+  </div>
+
+  <div class="row" id="datepicker-container">
+    <div class="col-lg-1">
+      <%= f.label "Date or Order" %>
+    </div>
+    <div class="col-lg-6">
+      <%= f.datetime_select :publish_date %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-7">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

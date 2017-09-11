@@ -1,0 +1,10 @@
+<%= redux_store("PostStore", props: { rails_props: @rails_props }) %>
+<% post_types = [['blog', nil], ['featured', 'featured'], ['portfolio', 'portfolio']] %>
+<%= form_for @post, html: {id: "create_post_form"} do |f| %>
+ <%= react_component("PostForm",
+    prerender: prerender(false)
+    )
+ %>
+<% end %>
+<%= redux_store_hydration_data %>
+<%= link_to 'Dashboard', '/admin/dashboard', class: 'largeButton'%>

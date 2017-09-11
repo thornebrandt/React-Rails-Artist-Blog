@@ -1,0 +1,32 @@
+<hr class='divider'>
+<a class="h2_link" href="<%= @post.link %>">
+	<h3 class='title'><%= @post.title %></h3>
+</a>
+<h4 class='subtitle'><%= @post.subtitle %></h4>
+<div class="postBody">
+	<% if !@post.summary || @post.summary == '' %>
+		<%= @post.body.html_safe %>
+	<% else %>
+		<%= @post.summary.html_safe %>
+	<% end %>
+</div>
+<% if !@post.summary || @post.summary == '' %>
+	<p>
+		<%= link_to 'Link to this Post', @post.link %>
+	</p>
+<% else %>
+	<%= link_to 'Read More', @post.link %>
+<% end %>
+
+<% if logged_in %>
+	<p>
+		<%= link_to 'Edit', edit_post_path(@post) %> <br />
+		<% if !@post.published %>
+			<strong>(NOT PUBLISHED)</strong> <br/>
+			<%= link_to 'Publish', @post.publish_path %>
+		<% else %>
+			<%= link_to 'UnPublish', @post.unpublish_path %>
+		<% end %><br />
+		<%= link_to 'Dashboard', '/admin/dashboard' %>
+	</p>
+<% end %>

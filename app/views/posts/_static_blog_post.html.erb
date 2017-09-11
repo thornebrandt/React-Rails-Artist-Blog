@@ -1,0 +1,28 @@
+<article class="project">
+	<%= image_tag "headings/skull.png", class: "chapterHeading" %>
+	<h2>Facetracking Glitches 5</h2>
+	<h4>February 21st, 2016</h4>
+	<div class="tags">
+		<a href="#">Development</a>
+		<a href="#">Javascript</a>
+		<a href="#">Facetracking</a>
+		<a href="#">Glitch</a>
+		<a href="#">WebGL</a>
+		<a href="#">Canvas</a>
+	</div>
+	<p>
+		I'm trying to create a faceswap feature.
+	</p>
+	<p>In trying to debug the facetracking problem from <a href="#">earlier</a>, I am now capturing the image data for the mask on every frame. Because of the difference in scale, it creates almost a liquid effect which I thoroughly enjoy.
+	</p>
+	<p>TODO - create a tool that exagerrates this.
+	<%= video_tag(
+			[
+				"facetracking_glitch2.webm",
+				"facetracking_glitch2.ogv",
+				"facetracking_glitch2.mp4"
+			],
+			controls: true,
+			poster: "posters/facetracking_glitch2.png"
+		) %>
+</article>

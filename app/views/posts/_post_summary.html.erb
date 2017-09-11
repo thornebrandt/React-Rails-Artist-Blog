@@ -1,0 +1,40 @@
+<article class="project summary">
+	<% if @post.icon %>
+		<%= image_tag @post.icon, class: "chapterHeading" %>
+	<% end %>
+	<a class="h2_link" href="<%= @post.link %>">
+		<h2 class='title'><%= @post.title %></h2>
+	</a>
+	<h4 class='subtitle'><%= @post.subtitle %></h4>
+	<h4 class="publishDate"><%= @post.formatted_publish_date %></h4>
+	<% if @post.tags %>
+		<%= render "tags/tags", tags: @post.tags %>
+	<% end %>
+	<div class="postBody">
+		<% if !@post.summary || @post.summary == '' %>
+			<%= @post.body.html_safe %>
+		<% else %>
+			<%= @post.summary.html_safe %>
+		<% end %>
+	</div>
+	<% if !@post.summary || @post.summary == '' %>
+		<p>
+			<%= link_to 'Link to this Post', @post.link %>
+		</p>
+	<% else %>
+		<%= link_to 'Read More', @post.link %>
+	<% end %>
+
+	<% if logged_in %>
+		<p>
+		<%= link_to 'Edit Post', edit_post_path(@post) %> <br />
+			<% if !@post.published %>
+				<strong>(NOT PUBLISHED)</strong> <br/>
+				<%= link_to 'Publish Post', @post.publish_path %>
+			<% else %>
+				<%= link_to 'UnPublish Post', @post.unpublish_path %>
+			<% end %><br />
+			<%= link_to 'Dashboard', '/admin/dashboard' %>
+		</p>
+	<% end %>
+</article>

@@ -1,0 +1,7 @@
+a config/env.yml needs to be created. 
+
+check config/env.yml.sample for example
+
+
+
+

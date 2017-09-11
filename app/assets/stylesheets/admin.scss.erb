@@ -1,0 +1,280 @@
+#admin{
+	font-family: Arial;
+
+	a.tab{
+		text-decoration: none;
+		color: white;
+		background: gray;
+		border-radius: 0 0 5px 5px;
+		padding: 10px;
+		display: inline-block;
+		margin: -20px 0px 0px 30px;
+		padding-top: 14px;
+		border: black solid 1px;
+	}
+
+	a.tab.green{
+		background-color: #80BA5D;
+	}	
+
+	a.tab.blue{
+		background-color: #4F618F;
+	}
+	
+	a.tab:hover{
+		background: pink;
+	}
+
+
+	header{
+		width: 100%;
+		background: pink;
+		text-align: center;
+		display: block;
+		padding: 10px;
+		color: white;
+		margin-bottom: 5px;
+	}
+
+	label{
+		font-size: smaller;
+		color: gray;
+		display: inline-block;
+		margin-top: 20px;
+		margin-bottom: -10px;
+		margin-left: 10px;
+	}
+
+	input, textarea, select, button{
+		width: 100%;
+		margin: 10px;
+		height: 3em;
+		font-size: .8em;
+		border-radius: 5px;
+		border: black solid 1px;
+	}
+
+	button{
+		margin-bottom: 50px;
+		margin-top: 50px;
+	}
+
+	textarea.pink{
+		background: #FFECEC;
+		color: black;
+	}
+
+	.pink{
+		color: pink;
+	}
+
+	input.checkbox{
+		width: 3em;
+	}
+
+	.Select-input input {
+		border: 0px none;
+		margin: 0px;
+		height: auto;
+		font-size: inherit;
+		border-radius: 0px;
+	}
+
+	.Select {
+		margin-left: 10px;
+		width: 100%;
+		margin-top: 5px;
+	}
+
+	.Select-control {
+		border: black solid 1px;
+	}
+
+
+	#datepicker-container{
+		font-size: medium;
+		margin-left: 0px;
+		line-height: 1em;
+		input, textarea, select{
+			width: auto;
+			margin: auto;
+			font-size: medium;
+		}
+	}
+
+	textarea{
+		height: 200px;
+	}
+
+	.btn{
+		display: block;
+		padding: 5px;
+		background: gray;
+		border: #333 solid 1px;
+		border-radius: 5px;
+		color: black;
+		min-width: 100px;
+		font-family: Arial;
+		margin-left: 10px;
+		width: 100%;
+	}
+
+	#uploader-container{
+		img{
+			max-width: 150px;
+			border: black solid 1px;
+			padding: 5px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 10px;
+		}
+		span.imageSource{
+			border: black solid 1px;
+			display: block;
+			padding: 5px;
+			margin: 5px;
+			font-size: smaller;
+		}
+	}
+
+	#uploaded-files{
+		list-style: none;
+		li {
+			list-style: none;
+			border: black solid 1px;
+		}
+		.fileSrc{
+			text-align: center;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		img{
+			border: none;
+		}
+	}
+
+	.fileSize{
+		margin-left: 10px;
+	}
+
+	.error{
+		background: #DC143C;
+		text-align: center;
+		color: white;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+	}
+
+	.largeButton{
+		border-radius: 5px;
+		display: block;
+		min-width: 100px;
+		min-height: 1em;
+		background: #CDFDB8;
+		border: #72836B solid 1px;
+		text-decoration: none;
+		text-align: center;
+		padding: 15px;
+		color: #72836B;
+		margin-top: 10px;
+
+		&.error{
+			background: #5B2731;
+			color: white;
+			font-weight: bold;
+		}
+	}
+
+	.largeButton:hover{
+		background: #C0E0B2;
+		color: white;
+	}
+
+	.largeButton.error:hover{
+		backbround: red;
+	}
+
+	.dashboardTable{
+		width: 100%;
+		td{
+			border: black solid 1px;
+		}
+	
+	}
+
+	.post_table{
+
+		.row{
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+
+		a{
+			text-decoration: none;
+			font-weight: bold;
+			color: brown;
+		}
+
+		a:hover{
+			text-decoration: underline;
+		}
+		margin-bottom: 30px;
+	}
+
+	.row.heading{
+		background: #BFC9CA;
+		font-weight: 900;
+		border-bottom: solid black 2px;
+	}
+
+	.row.even{
+		background: white;
+		border-left: gray solid 1px;
+		border-right: gray solid 1px;
+		border-bottom: gray solid 1px;
+	}
+
+	.row.odd{
+		background: #FAE5D3;
+		border: gray solid 1px;
+	}
+
+	.tags{
+		text-align: left;
+	}
+
+	ul{
+		list-style: none;
+	}
+
+	a.icon{
+		background-size: 100% 100%;
+		display: inline-block;
+		height: 1em;
+		width: 1em;
+		fill: currentColor;
+		cursor: pointer;
+		padding: 5px;
+		vertical-align: middle;
+	}
+
+	a.icon.edit{
+		background-image: url(<%= asset_path "icon-pencil.svg" %>);
+	}
+
+	a.icon.trash{
+		background-image: url(<%= asset_path "icon-trash.svg" %>);
+	}
+
+	.post_icon{
+		display: inline-block;
+		height: 2em;
+		width: 2em;
+		vertical-align: middle;
+	}
+
+
+}

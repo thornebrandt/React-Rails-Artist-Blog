@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<h1>Portfolios</h1>
+<h3> Your enviornment is: <%= ENV["RAILS_ENV"] %> </h3>
+
+<% @portfolios.each do |portfolio| %>
+	<p>
+		<%= portfolio.name %>
+	</p>
+<% end %>
+
+<%= link_to 'New Portfolio', new_portfolio_path %>

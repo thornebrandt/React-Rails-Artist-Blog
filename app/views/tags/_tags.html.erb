@@ -1,0 +1,7 @@
+<div class="tags">
+	<% tags.each do |tag| %>
+		<a href="<%= tag.link %>" class="tag", style="background-color: <%= tag.color %> ">
+			<%= tag.display_name %>
+		</a>
+	<% end %>
+</div>
