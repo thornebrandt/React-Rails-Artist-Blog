@@ -1,24 +1,34 @@
-# README
+# React Rails Artist Blog/Portfolio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo facilitates creation of a simple artist blog/portfolio with the following features. 
+  * Redux powered single user admin page
+  * File uploads, immediate image previews
+  * Shorthand for image and video tags in a bare-bones WYSIWYG
+  * Toggle in between shorthand and HTML and immediately see post previews
+  * Featured, Portfolio and Blog post types. 
+  * Quickly add tags.
 
-Things you may want to cover:
+## Getting Started
+```
+npm install
+bundle install
+rails db:migration
+npm start
+```
 
-* Ruby version
+## Testing
+```
+npm test
+```
+Will run a continual jest/enzyme unit tests of the redux powered admin. 
+```
+rails test
+```
+For functional and integration tests. 
 
-* System dependencies
 
-* Configuration
+## Logging into Admin
 
-* Database creation
+There is no users databse. This is a single user application.  You can use your own authentication process or manually run a BCrypt::Password.create(YOUR_PASSWORD) and store the hash in a place where the app can find it.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*( See config/env.yml.sample for an example )*
