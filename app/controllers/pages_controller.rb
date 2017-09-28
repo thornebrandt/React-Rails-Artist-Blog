@@ -36,8 +36,6 @@ class PagesController < ApplicationController
 			{ name: @portfolio.name, link: @portfolio.link },
 			{ name: @post.title, link: @post.link }
 		];
-		puts 'huh'
-		puts @breadcrumbs.inspect
 		render :post
 	end
 
